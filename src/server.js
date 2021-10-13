@@ -14,4 +14,7 @@ const handleListening = () => {
   console.log(`🚀 http://localhost:${PORT}`);
 };
 
-app.listen(PORT, handleListening);
+const server = app.listen(PORT, handleListening);
+
+// socketIO()메서드에 Node HTTP Server를 전달해서 새로운 소켓 서버를 생성
+const io = socketIO(server);
