@@ -20,7 +20,6 @@ const socketServer = socketIO(server);
 
 socketServer.on("connection", (socket) => {
   console.log("🚀 Connected Socket.IO");
-  console.log("socket", socket);
 
   socket.on("setNickname", ({ nickname }) => {
     socket.nickname = nickname;

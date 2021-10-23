@@ -1,4 +1,6 @@
-const socketClient = io("/");
+// import { io } from "socket.io-client";
+
+const socketClient = io("http://localhost:4000/");
 
 const setNickname = (nickname) => {
   socketClient.emit("setNickname", { nickname });
