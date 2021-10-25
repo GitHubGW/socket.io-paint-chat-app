@@ -23,6 +23,7 @@ socketServer.on("connection", (socket) => {
 
   socket.on("setNickname", ({ nickname }) => {
     socket.nickname = nickname;
+    console.log("aa", socket.nickname);
   });
 
   socket.on("clientMessage", ({ message }) => {
