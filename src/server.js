@@ -27,8 +27,8 @@ socketServer.on("connection", (socketClient) => {
   });
 
   socketClient.on("disconnect", () => {
-    console.log("32313123", socketClient);
-
-    socketClient.broadcast.emit("disconnected", { nickname: socketClient.nickname });
+    if (socketClient.nickname !== undefined) {
+      socketClient.broadcast.emit("disconnected", { nickname: socketClient.nickname });
+    }
   });
 });
