@@ -9,24 +9,26 @@ app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
 app.use(morgan("dev"));
 app.use(express.static(`${process.cwd()}/src/public`));
-
 app.get("/", (req, res) => res.render("home"));
 
-const server = app.listen(PORT, () => {
-  console.log(`🚀 http://localhost:${PORT}`);
-});
-
+const server = app.listen(PORT, () => console.log(`🚀 http://localhost:${PORT}`));
 const socketServer = socketIO(server);
 
-socketServer.on("connection", (socket) => {
+socketServer.on("connection", (socketClient) => {
   console.log("🚀 Connected Socket.IO");
 
-  socket.on("setNickname", ({ nickname }) => {
-    socket.nickname = nickname;
-    console.log("aa", socket.nickname);
+  socketClient.on("joinUser", ({ nickname }) => {
+    socketClient.nickname = nickname;
+    socketClient.broadcast.emit("joinUser", { nickname });
   });
 
-  socket.on("clientMessage", ({ message }) => {
-    socket.broadcast.emit("serverMessage", { message, nickname: socket.nickname || "User" });
+  socketClient.on("sendMessage", ({ message }) => {
+    socketClient.broadcast.emit("sendMessage", { message, nickname: socketClient.nickname });
+  });
+
+  socketClient.on("disconnect", () => {
+    console.log("32313123", socketClient);
+
+    socketClient.broadcast.emit("disconnected", { nickname: socketClient.nickname });
   });
 });

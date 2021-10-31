@@ -14,7 +14,12 @@ html(lang="ko")
     .container.hidden
       h1 You are logged in
 
+    button(type="button" class="sendMessageButton") 메세지 전송
+
+    .notification
+
     script(src="/socket.io/socket.io.js")
-    script(src="js/index.js")
+    script(src="js/client.js")
     script(src="js/main.js")
     script(src="js/login.js")
+    script(src="js/notification.js")

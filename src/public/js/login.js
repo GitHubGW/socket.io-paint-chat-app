@@ -3,12 +3,16 @@ const loginForm = document.querySelector(".loginForm");
 const loginButton = document.querySelector(".loginButton");
 const container = document.querySelector(".container");
 
-const handleLoginButton = () => {
+// 닉네임 설정 및 알림
+const handleLoginButton = (event) => {
+  event.preventDefault();
   const loginInput = document.querySelector(".loginInput");
-  localStorage.setItem("nickname", loginInput.value);
-
+  const loginInputValue = loginInput.value;
+  loginInput.value = "";
+  localStorage.setItem("nickname", loginInputValue);
+  loginForm.classList.add("hidden");
   const socketClient = io("http://localhost:4000");
-  socketClient.emit("setNickname", { nickname: loginInput.value });
+  socketClient.emit("joinUser", { nickname: loginInputValue });
 };
 
 if (nickname === null) {
@@ -17,5 +21,5 @@ if (nickname === null) {
 } else {
   container.classList.remove("hidden");
   const socketClient = io("http://localhost:4000");
-  socketClient.emit("setNickname", { nickname });
+  socketClient.emit("joinUser", { nickname });
 }
