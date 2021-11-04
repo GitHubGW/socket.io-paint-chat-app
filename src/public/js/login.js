@@ -11,6 +11,7 @@ const handleLoginButton = (event) => {
   loginInput.value = "";
   localStorage.setItem("nickname", loginInputValue);
   loginForm.classList.add("hidden");
+  container.classList.remove("hidden");
   const socketClient = io("http://localhost:4000");
   socketClient.emit("joinUser", { nickname: loginInputValue });
 };

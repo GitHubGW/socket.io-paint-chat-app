@@ -7,14 +7,16 @@ html(lang="ko")
     link(rel="stylesheet", href="css/style.css")
     title Drawing Game
   body 
-    form.loginForm.hidden(method="GET") 
-      input(type="text" class="loginInput" placeholder="What's your Nickname?")
-      input(type="submit" class="loginButton" value="Join")
+    form.loginForm.hidden
+      input(type="text" class="loginInput" placeholder="닉네임을 설정하세요.")
+      input(type="submit" class="loginButton" value="입장")
     
     .container.hidden
-      h1 You are logged in
-
-    button(type="button" class="sendMessageButton") 메세지 전송
+      .chatContainer
+        ul.chatList
+        form.chatForm
+          input(type="text" placeholder="메세지를 입력하세요.") 
+          button(type="submit" class="sendMessageButton") 메세지 전송
 
     .notification
 

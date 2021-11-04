@@ -22,13 +22,13 @@ socketServer.on("connection", (socketClient) => {
     socketClient.broadcast.emit("joinUser", { nickname });
   });
 
-  socketClient.on("sendMessage", ({ message }) => {
-    socketClient.broadcast.emit("sendMessage", { message, nickname: socketClient.nickname });
-  });
-
   socketClient.on("disconnect", () => {
     if (socketClient.nickname !== undefined) {
       socketClient.broadcast.emit("disconnected", { nickname: socketClient.nickname });
     }
+  });
+
+  socketClient.on("clientMessage", ({ message, nickname }) => {
+    socketClient.broadcast.emit("clientMessage", { message, nickname });
   });
 });
