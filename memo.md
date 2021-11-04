@@ -16,9 +16,24 @@
 ```javascript
 npm install eslint -D
 
-npx eslint --init
-또는
-yarn run eslint --init
+npx eslint --init 또는 yarn run eslint --init
+```
+
+#### Pug에서 script 사용
+
+- Pug파일에서 script를 사용할 때는 script.을 붙여주고, script.내부에 사용할 자바스크립트 코드를 넣어주면 된다.
+- 현재 이 프로젝트에서는 io("http://localhost:4000")를 통해 소켓 서버에 연결하고, 해당 함수를 여러 파일에서 자주 사용한다.
+- 그렇기 때문에 `window.socketClient=io("http://localhost:4000")`로 window객체에 socketClient라는 변수로 io("http://localhost:4000")를 넣어주게 되면 전역 변수인 window객체를 통해 아래 login.js, message.js 등의 파일에서 불러와서 전역적으로 사용할 수 있다.
+- io()메서드는 socket.io.js로부터 오기 때문에 script(src="/socket.io/socket.io.js")보다 뒤에서 script를 통해 불러와야 한다.
+
+```javascript
+script(src="/socket.io/socket.io.js")
+script.
+  window.socketClient=io("http://localhost:4000")
+script(src="js/login.js")
+script(src="js/message.js")
+script(src="js/main.js")
+script(src="js/notification.js")
 ```
 
 #### HTTP

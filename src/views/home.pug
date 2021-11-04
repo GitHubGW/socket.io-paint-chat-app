@@ -21,7 +21,7 @@ html(lang="ko")
     .notification
 
     script(src="/socket.io/socket.io.js")
-    script(src="js/client.js")
-    script(src="js/main.js")
+    script.
+      window.socketClient=io("http://localhost:4000")
     script(src="js/login.js")
-    script(src="js/notification.js")
+    script(src="js/message.js")
