@@ -1,9 +1,10 @@
 const nickname = localStorage.getItem("nickname");
+const notification = document.querySelector(".notification");
 const loginForm = document.querySelector(".loginForm");
 const loginButton = document.querySelector(".loginButton");
 const container = document.querySelector(".container");
 
-// 닉네임 설정 및 알림
+// 유저 닉네임 설정
 const handleLoginButton = (event) => {
   event.preventDefault();
   const loginInput = document.querySelector(".loginInput");
@@ -12,15 +13,24 @@ const handleLoginButton = (event) => {
   localStorage.setItem("nickname", loginInputValue);
   loginForm.classList.add("hidden");
   container.classList.remove("hidden");
-  const socketClient = io("http://localhost:4000");
-  socketClient.emit("joinUser", { nickname: loginInputValue });
+  window.socketClient.emit("joinUser", { nickname: loginInputValue });
 };
+
+// 유저 입장, 퇴장 알림
+const handleNotification = (text, color) => {
+  const div = document.createElement("div");
+  div.innerText = text;
+  div.style.backgroundColor = color;
+  notification.appendChild(div);
+};
+
+window.socketClient.on("joinUser", ({ nickname }) => handleNotification(`${nickname}님이 들어왔습니다.`, "dodgerblue"));
+window.socketClient.on("disconnected", ({ nickname }) => handleNotification(`${nickname}님이 나갔습니다.`, "crimson"));
 
 if (nickname === null) {
   loginForm.classList.remove("hidden");
   loginButton.addEventListener("click", handleLoginButton);
 } else {
   container.classList.remove("hidden");
-  const socketClient = io("http://localhost:4000");
-  socketClient.emit("joinUser", { nickname });
+  window.socketClient.emit("joinUser", { nickname });
 }
