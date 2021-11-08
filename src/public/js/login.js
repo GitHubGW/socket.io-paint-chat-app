@@ -3,6 +3,7 @@ const notification = document.querySelector(".notification");
 const loginForm = document.querySelector(".loginForm");
 const loginButton = document.querySelector(".loginButton");
 const container = document.querySelector(".container");
+const chatContent = document.querySelector(".chatContent");
 
 // 유저 닉네임 설정
 const handleLoginButton = (event) => {
@@ -13,6 +14,7 @@ const handleLoginButton = (event) => {
   localStorage.setItem("nickname", loginInputValue);
   loginForm.classList.add("hidden");
   container.classList.remove("hidden");
+  chatContent.classList.remove("hidden");
   window.socketClient.emit("joinUser", { nickname: loginInputValue });
 };
 
@@ -32,5 +34,6 @@ if (nickname === null) {
   loginButton.addEventListener("click", handleLoginButton);
 } else {
   container.classList.remove("hidden");
+  chatContent.classList.remove("hidden");
   window.socketClient.emit("joinUser", { nickname });
 }

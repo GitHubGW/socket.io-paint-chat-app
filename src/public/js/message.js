@@ -8,15 +8,17 @@ const handleSendMessage = (event) => {
   event.preventDefault();
   const chatFormInputValue = chatFormInput.value;
   const li = document.createElement("li");
-  li.innerHTML = `You: ${chatFormInputValue}`;
+  const nickname = localStorage.getItem("nickname");
+  li.style.color = "white";
+  li.innerHTML = `${nickname}: ${chatFormInputValue}`;
   chatList.appendChild(li);
   chatFormInput.value = "";
-  const nickname = localStorage.getItem("nickname");
   window.socketClient.emit("clientMessage", { message: chatFormInputValue, nickname });
 };
 
 window.socketClient.on("clientMessage", ({ message, nickname }) => {
   const li = document.createElement("li");
+  li.style.color = "#fdcb6e";
   li.innerHTML = `${nickname}: ${message}`;
   chatList.appendChild(li);
 });

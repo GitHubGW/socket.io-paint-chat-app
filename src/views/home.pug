@@ -4,19 +4,64 @@ html(lang="ko")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="shortcut icon" href="../images/favicon.png")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.15.4/css/all.css")
     link(rel="stylesheet", href="css/style.css")
     title Drawing Game
   body 
-    form.loginForm.hidden
-      input(type="text" class="loginInput" placeholder="닉네임을 설정하세요.")
-      input(type="submit" class="loginButton" value="입장")
-    
     .container.hidden
-      .chatContainer
-        ul.chatList
-        form.chatForm
-          input(type="text" placeholder="메세지를 입력하세요.") 
-          button(type="submit" class="sendMessageButton") 메세지 전송
+      .controls 
+        .color__container 
+          .control__current-color-list
+            .control__color.control__current-color#jsCurrentColor(style="background-color: #000000")
+            h2 색상
+
+          .control__color-list#jsColor
+            .control__color(style="background-color: #000000")
+            .control__color(style="background-color: #ffffff")
+            .control__color(style="background-color: #636e72")
+            .control__color(style="background-color: #b2bec3")
+            .control__color(style="background-color: #f3a683")
+            .control__color(style="background-color: #f7d794")
+            .control__color(style="background-color: #778beb")
+            .control__color(style="background-color: #e77f67")
+            .control__color(style="background-color: #cf6a87")
+            .control__color(style="background-color: #bdc581")
+            .control__color(style="background-color: #d63031")
+            .control__color(style="background-color: #ffa801")
+            .control__color(style="background-color: #ffd32a")
+            .control__color(style="background-color: #05c46b")
+            .control__color(style="background-color: #0984e3")
+            .control__color(style="background-color: #3c40c6")
+            .control__color(style="background-color: #00d8d6")
+            .control__color(style="background-color: #cd84f1")
+            .control__color(style="background-color: #fd79a8")
+            .control__color(style="background-color: #fffa65")
+
+        .brush__container
+          i.fas.fa-brush
+          input(type="range" name="input-range" id="jsInputRange" class="input_range" min="1" max="10" value="4" step="0.1")
+
+        .control__button-list
+          button#jsReset 초기화
+          button#jsFill 색 채우기
+          button#jsSave 이미지 저장
+
+      canvas(id="jsCanvas", class="canvas")
+
+      .chatContent.hidden
+        .chatContainer
+          h1.currentUsers
+          .currentUsersNickname
+          ul.chatList
+            span #{new Date().getFullYear()}년 #{new Date().getMonth()+1}월 #{new Date().getDate()}일
+          form.chatForm
+            input(type="text" placeholder="메세지를 입력하세요.") 
+            button(type="submit" class="sendMessageButton") 전송
+
+    form.loginForm.hidden
+      input(type="text" class="loginInput" placeholder="닉네임을 입력하세요.")
+      input(type="submit" class="loginButton" value="입장")
 
     .notification
 
@@ -25,3 +70,5 @@ html(lang="ko")
       window.socketClient=io("http://localhost:4000")
     script(src="js/login.js")
     script(src="js/message.js")
+    script(src="js/paint.js")
+    script(src="js/users.js")
