@@ -10,6 +10,5 @@ window.socketClient.on("allSockets", ({ allSockets }) => {
     h2.innerHTML = `${socket.nickname},`;
     currentUsersNickname.appendChild(h2);
   });
-
   currentUsers.innerHTML = `👨‍💻 현재 접속중인 유저: ${allSockets.length}명`;
 });

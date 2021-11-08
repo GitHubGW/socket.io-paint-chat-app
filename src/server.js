@@ -33,27 +33,15 @@ socketServer.on("connection", (socketClient) => {
     }
   });
 
-  socketClient.on("clientMessage", ({ message, nickname }) => {
-    socketClient.broadcast.emit("clientMessage", { message, nickname });
-  });
+  socketClient.on("clientMessage", ({ message, nickname }) => socketClient.broadcast.emit("clientMessage", { message, nickname }));
 
-  socketClient.on("beginPath", ({ offsetX, offsetY }) => {
-    socketClient.broadcast.emit("beganPath", { offsetX, offsetY });
-  });
+  socketClient.on("beginPath", ({ offsetX, offsetY }) => socketClient.broadcast.emit("beganPath", { offsetX, offsetY }));
 
-  socketClient.on("strokePath", ({ offsetX, offsetY, strokeStyle }) => {
-    socketClient.broadcast.emit("strokedPath", { offsetX, offsetY, strokeStyle });
-  });
+  socketClient.on("strokePath", ({ offsetX, offsetY, strokeStyle }) => socketClient.broadcast.emit("strokedPath", { offsetX, offsetY, strokeStyle }));
 
-  socketClient.on("fill", ({ fillStyle }) => {
-    socketClient.broadcast.emit("filled", { fillStyle });
-  });
+  socketClient.on("fill", ({ fillStyle }) => socketClient.broadcast.emit("filled", { fillStyle }));
 
-  socketClient.on("reset", ({ fillStyle }) => {
-    socketClient.broadcast.emit("reseted", { fillStyle });
-  });
+  socketClient.on("reset", ({ fillStyle }) => socketClient.broadcast.emit("reseted", { fillStyle }));
 
-  socketClient.on("lineWidth", ({ lineWidth }) => {
-    socketClient.broadcast.emit("linedWidth", { lineWidth });
-  });
+  socketClient.on("lineWidth", ({ lineWidth }) => socketClient.broadcast.emit("linedWidth", { lineWidth }));
 });
