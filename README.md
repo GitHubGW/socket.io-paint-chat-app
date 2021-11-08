@@ -1,4 +1,4 @@
-# Socket.IO-Chat-Painting-App
+# Socket.IO-Paint-Chat-App
 
 ## 🔗 Demo
 
