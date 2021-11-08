@@ -2,7 +2,7 @@ import express from "express";
 import socketIO from "socket.io";
 import morgan from "morgan";
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 app.set("view engine", "pug");
