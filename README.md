@@ -2,7 +2,7 @@
 
 ## 🔗 Demo
 
-https://chat-painting-gw.herokuapp.com
+https://paint-chat-gw.herokuapp.com
 
 ## 🖥 Preview
 
