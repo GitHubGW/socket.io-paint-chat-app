@@ -80,6 +80,16 @@ script(src="js/notification.js")
 - socket.broadcast.emit("hello")은 방금 연결된 소켓을 제외한 나머지 모든 소켓들에게 hello 이벤트를 보낸다.
 - https://socket.io/docs/v4/broadcasting-events
 
+4. socketIO(server)를 통해 생성한 socketServer또한 emit메서드를 사용할 수 있다.
+- socketServer.emit()을 통해 이벤트를 전달하게 되면 연결되어 있는 모든 전체 소켓에 이벤트를 보낼 수 있다.
+- 위의 emit이나 broadcast.emit은 방금 연결된 소켓이나, 방금 연결된 소켓을 제외한 다른 모든 소켓들에게만 이벤트를 전달할 수 있는데, 모든 전체 소켓에 이벤트를 보내고 싶다면 socketServer를 이용해서 emit을 해주면 된다.
+
+```javascript
+const socketServer = socketIO(server)
+
+socketServer.emit("allUsers", { allSockets })
+```
+
 ### Chat
 
 - Socket.IO를 이용해서 간단한 채팅을 만들었다.
@@ -173,3 +183,4 @@ html(lang="ko")
   script(src="/socket.io/socket.io.js")
   script(src="index.js")
 ```
+
