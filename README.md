@@ -10,7 +10,6 @@
 
 <img height="30" src="https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=Javascript&logoColor=F7DF1E"/>   <img height="30" src="https://img.shields.io/badge/Pug-A86454?style=for-the-badge&logo=Pug&logoColor=white"/>
 <img height="30" src="https://img.shields.io/badge/Babel-F9DC3E?style=for-the-badge&logo=Babel&logoColor=black"/>
-<img height="30" src="https://img.shields.io/badge/Gulp-CF4647?style=for-the-badge&logo=Gulp&logoColor=white"/>
 
 ### Back-end
 
@@ -22,7 +21,6 @@
 - [x] ES6
 - [x] NodeJS
 - [x] Socket.IO
-- [x] Gulp
 
 ## 📖 Theory
 
@@ -31,7 +29,6 @@
 - [x] Emit Events
 - [x] Broadcast Events
 - [x] Canvas API
-- [x] Browserify
 
 ## ⚙ Features
 
