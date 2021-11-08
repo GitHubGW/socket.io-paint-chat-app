@@ -6,6 +6,9 @@ https://paint-chat-gw.herokuapp.com
 
 ## 🖥 Preview
 
+<img src="preview1.png" />
+<img src="preview2.png" />
+
 ## 🔥 Stack
 
 ### Front-end
