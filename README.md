@@ -1,6 +1,8 @@
-# Socket.IO-Drawing-Game
+# Socket.IO-Chat-Painting-App
 
 ## 🔗 Demo
+
+https://chat-painting-gw.herokuapp.com
 
 ## 🖥 Preview
 
