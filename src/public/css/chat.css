@@ -1,0 +1,85 @@
+.chatContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-47%);
+}
+.currentUsers{
+  text-align: center;
+  color:white;
+  margin-bottom:12px;
+}
+.currentUsersNickname{
+  display: flex;
+  justify-content: center;
+  color:white;
+  margin-bottom:12px;
+}
+.currentUserNickname{
+  margin-right:10px;
+  font-size:15px;
+}
+.chatList{
+  width: 330px;
+  height:790px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow-y: auto;
+  padding: 15px;
+  padding-top:60px;
+  box-sizing: border-box;
+  background: url("../images/chat-background.jpeg") no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+.chatList span{
+  color:white;
+  position: absolute;
+  top:20px;
+  left:50%;
+  transform: translate(-50%);
+  font-size: 14px;
+}
+.chatList li{
+  margin-bottom: 12px;
+  font-size:16px;
+  text-align: left;
+}
+.chatForm{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chatForm input{
+  outline: none;
+  font-family: 'Jua', sans-serif;
+  padding: 10px 20px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width:260px;
+  box-sizing: border-box;
+}
+.chatForm button{
+  background-color: #00a8ff;
+  border-radius: 5px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  outline: none;
+  padding: 10px 19px;
+  text-align: center;
+  text-decoration: none;
+  margin:8px 0;
+  font-family: 'Jua', sans-serif;
+}

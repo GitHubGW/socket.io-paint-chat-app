@@ -1,0 +1,104 @@
+canvas {
+  width: 850px;
+  height: 850px;
+  background-color: white;
+  border: 2px solid #eee;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  width: 90px;
+}
+.color__container {
+  display: flex;
+  flex-direction: column;
+}
+.control__current-color-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.control__current-color-list h2 {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+  color: #222;
+}
+.control__color.control__current-color {
+  width: 50px;
+  height: 50px;
+}
+.control__color-list {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  flex-wrap: wrap;
+}
+.control__color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin: 1px;
+}
+.brush__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+.brush__container .fas {
+  font-size: 25px;
+  color: black;
+  margin-bottom: 5px;
+}
+.brush__container .input_range {
+  width: 90%;
+}
+.control__button-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+.control__button-list button {
+  font-size: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 10px;
+  margin-bottom: 10px;
+  padding: 12px 0px;
+  border-radius: 5px;
+  width: 90px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-family: "Jua", sans-serif;
+  transition: 0.3s;
+  color: white;
+  font-weight: bold;
+}
+.control__button-list button:nth-child(1) {
+  background-color: #95afc0;
+}
+.control__button-list button:nth-child(2) {
+  background-color: #a29bfe;
+}
+.control__button-list button:nth-child(3) {
+  background-color: #74b9ff;
+}

@@ -1,0 +1,30 @@
+.notification div{
+  position:absolute;
+  opacity: 0;
+  bottom:0px;
+  left: 30px;
+  color:white;
+  padding: 13px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  animation: notification 3s alternate;
+}
+
+@keyframes notification {
+  0%{
+    bottom:0px;
+    opacity: 0;
+  }
+  30%{
+    bottom:40px;
+    opacity: 1;
+  }
+  70%{
+    bottom:40px;
+    opacity: 1;
+  }
+  100%{
+    bottom:0px;
+    opacity: 0;
+  }
+}

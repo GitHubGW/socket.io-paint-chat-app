@@ -1,33 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 @import url("reset.css");
+@import url("login.css");
+@import url("notification.css");
+@import url("chat.css");
+@import url("paint.css");
 
-body{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-}
-
+.container.hidden,
 .loginForm.hidden,
-.container.hidden{
+.chatContent.hidden{
   display: none;
 }
 
-.notification div{
-  position:absolute;
-  bottom:30px;
-  left: 30px;
-  color:white;
-  padding: 13px 30px;
-  border-radius: 20px;
-  font-size: 20px;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f9fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Jua", sans-serif;
+  background: url("../images/background.jpeg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
 }
-
-.chatContainer{
-  /* border:3px solid red; */
-}
-
-.chatList{
-  height:50vh;
-  background-color: #f5f5f5;
+.container {
+  display: flex;
+  margin-top: 90px;
+  justify-content: space-between;
 }
