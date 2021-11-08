@@ -1,10 +1,12 @@
 import express from "express";
 import socketIO from "socket.io";
 import morgan from "morgan";
+import cors from "cors";
 
 const PORT = process.env.PORT || 4000;
 const app = express();
 
+app.use(cors());
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
 app.use(morgan("dev"));
