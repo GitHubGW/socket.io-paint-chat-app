@@ -88,8 +88,8 @@
 @media (max-width: 768px){
   .chatContent{
     top:3%;
-    right:21px;
-    transform: none;
+    right: 50%;
+    transform: translate(50%);
   }
   .chatList{
     height:80vh;
