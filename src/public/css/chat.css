@@ -46,7 +46,7 @@
   font-size: 14px;
 }
 .chatList li{
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-size:17px;
   line-height: 1.1;
   text-align: left;
@@ -83,4 +83,15 @@
   text-decoration: none;
   margin:8px 0;
   font-family: 'Jua', sans-serif;
+}
+
+@media (max-width: 768px){
+  .chatContent{
+    top:3%;
+    right:21px;
+    transform: none;
+  }
+  .chatList{
+    height:665px;
+  }
 }

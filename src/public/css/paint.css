@@ -102,3 +102,12 @@ canvas {
 .control__button-list button:nth-child(3) {
   background-color: #74b9ff;
 }
+
+@media (max-width: 768px){
+  canvas{
+    display: none;
+  }
+  .controls{
+    display: none;
+  }
+}
